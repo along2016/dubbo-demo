@@ -1,0 +1,21 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8082
+
+dubbo:
+  application:
+    name: dubbo-web
+    qos-port: 33333
+    qos-enable: true
+    qos-accept-foreign-ip: false
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    host: 127.0.0.1
+    port: -1
+  consumer:
+    check: false
