@@ -1,6 +1,7 @@
 package com.aliang.provider;
 
 import com.aliang.api.UserInfoService;
+import com.aliang.exception.ServiceException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +20,11 @@ public class ProviderApplicationTests {
 
     @Test
     public void contextLoads() {
-        userInfoService.getUserInfo();
+        try {
+            userInfoService.getUserInfo();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

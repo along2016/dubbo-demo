@@ -1,10 +1,11 @@
 package com.aliang.exception;
 
-public class ServiceException extends RuntimeException {
+public class ServiceException extends Exception {
     private int code;
     private String message;
 
     public ServiceException(String message){
+
         super(message);
         this.code = -1;
     }

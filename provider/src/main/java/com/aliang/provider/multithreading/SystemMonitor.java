@@ -4,9 +4,11 @@ public class SystemMonitor {
 
     private Thread t;
 
+    private boolean stop = false;
+
     public void start(){
         t = new Thread(() -> {
-            while (!Thread.currentThread().isInterrupted()){
+            while (!stop){
                 System.out.println("正在监控系统...");
                 try {
                     Thread.sleep(3 * 1000L);
@@ -22,6 +24,7 @@ public class SystemMonitor {
     }
 
     public void stop(){
+        stop = true;
         t.interrupt();
     }
 

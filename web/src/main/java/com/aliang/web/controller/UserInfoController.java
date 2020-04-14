@@ -16,8 +16,15 @@ public class UserInfoController {
     private UserInfoService userInfoService;
 
     @GetMapping(value = "list")
-    public ApiResultMessage<String> list(){
-        String userInfo  = userInfoService.getUserInfo();
+    public ApiResultMessage<String> list() {
+        System.out.println("==========================================================");
+        String userInfo = null;
+        try {
+            userInfo = userInfoService.getUserInfo();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        System.out.println("=================**********************===================");
         return ApiResultMessage.success(userInfo);
     }
 }
