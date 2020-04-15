@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  user-provider:
+    image: wjl/provider:0.0.1-SNAPSHOT
+    hostname: provider
+
+  user-consumer:
+    image: wjl/web:0.0.1-SNAPSHOT
+    hostname: web
+    ports:
+    - 8002:8002
